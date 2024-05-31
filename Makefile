@@ -1,5 +1,5 @@
-CFLAGS=-I /opt/homebrew/include
-LIBS=-L /opt/homebrew/lib -lssl -lcrypto -lcurl
+CFLAGS := $(shell pkg-config --cflags openssl libcurl)
+LIBS   := $(shell pkg-config --libs   openssl libcurl)
 
 all: curl raw udp_server udp_client
 
